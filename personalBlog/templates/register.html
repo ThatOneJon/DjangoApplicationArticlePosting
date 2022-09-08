@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load static %}
+
+<title>{% block title %} Register {% endblock %}</title>
+
+{% block headline %}Register your Account!{% endblock %}
+{% block content %}
+<div class ="formDiv">
+    <h1>Register</h1>
+    <form action="{% url 'register_view' %}" method="POST" class="registerForm reg">
+        {% csrf_token %}
+        {% for field in form %}
+            {{field.label}}
+            {{field}}
+        {% endfor %}
+        <input type="submit" class="logBttn" id ="regB">
+        <p id="regP">Click here to <a href="{% url 'login_view'%}">Login.</a></p>
+    </form>
+</div>
+{% endblock %}

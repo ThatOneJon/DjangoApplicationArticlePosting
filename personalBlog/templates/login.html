@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block headline %}Login to participate!{% endblock %}
+
+{% block content %}
+<div class ="formDiv login">
+    <h1>Login</h1>
+    {% if message %}
+        <h2>{{message}}</h2>
+    {% endif %}
+    <form action="{% url 'login_view' %}" method="POST" class="registerForm log">
+        {% csrf_token %}
+        <label class="logLa">Username</label>
+        <input class="logLa inp" type="text"  name="username">
+        <label class="logLa">Password</label>
+        <input class="logLa inp" type="password"  name="password">
+        <input class="logLa logBttn" type="submit">
+
+        <p>Click here to <a href="{% url 'register_view' %}">Register.</a></p>
+    </form>
+</div>
+{% endblock %}

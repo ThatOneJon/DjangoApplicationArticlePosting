@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+    <script src="{% static 'script.js' %}"></script>   
+
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <div id ="navBar">
+        <h1 class ="SiteHeadline">{% block headline %}{% endblock %}</h1>
+        <ul class ="nav">
+            <li class="navChild"><a href="{% url 'index' %}" class="navChildL">Home</a></li>
+            <li class="navChild"><a href="{% url 'new_Post' %}" class="navChildL">New Article</a></li>
+            
+            {% if user.is_authenticated == False %}
+                <li class="navChild"><a href="{% url 'login_view' %}" class="navChildL">Login</a></li>
+                <li class="navChild"><a href="{% url 'register_view' %}" class="navChildL">Register</a></li>
+            {% else %}
+            <li class="navChild"><a href="{% url 'profile' request.user.id %}" class="navChildL">Profile</a></li>
+            <li class="navChild"><a href="{% url 'logout_view' %}" class="navChildL">Logout</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock %}  
+
+
+
+</body>
+<footer>
+    <div id ="socials">
+        <h3>Socials!</h3>
+        <h4>Instagram</h4>
+    </div>
+</footer>
+</html>

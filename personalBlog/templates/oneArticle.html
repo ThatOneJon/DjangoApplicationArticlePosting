@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block headline %}Article{% endblock %}
+{% block content %}
+    <div id="one_Article">
+        <div id="article_Content">
+            <h1 id = "article_headline">{{article.headline}}</h1>
+            <p>{{article.content}}</p>
+            {% if request.user == article.author %}
+                <div id="artBttns">
+                    <button id="edit" class="edit">Edit!</button>
+                    <form action="{% url 'edit' article.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" name="delete_IT" class="edit" id="del">Delete</button>
+                    </form>
+                </div>
+                {% endif %}
+        </div>
+
+        <div id="edit_Article">
+            <form action="{% url 'edit' article.id %}" method="POST" id="editForm">
+                {% csrf_token %}
+                <textarea rows="2" cols="50" name="newHeader">
+                    {{article.headline}}
+                </textarea>
+                <textarea rows= "30" cols= "50" name="newContent">
+                    {{article.content}}
+                </textarea>
+                <input type="submit" name="edit_IT">
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

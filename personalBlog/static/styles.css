@@ -1,0 +1,302 @@
+.navChild{
+    list-style-type: none;
+    margin-right: 4vw;
+    font-size: 1.5em;
+
+}
+
+.nav{
+    display: flex;
+}
+
+.navChildL{
+    text-decoration: none;
+    color: black;
+}
+
+.navChildL:hover{
+    background-color: black;
+    color: whitesmoke;
+    font-size: 1.8em;
+    padding: 15px;
+    border-radius: 10%;
+}
+#navBar{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SiteHeadline{
+    font-size: 2.6em;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.registerForm{
+    display:flex;
+    flex-direction: column;
+    width: 20vw;
+    min-width: 200px;
+    border:solid black 2px;
+    padding: 30px;
+    height: 50vh;
+
+
+
+}
+.login{
+    text-align: center;
+}
+
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logLa{
+    margin: 10px;
+    text-decoration: underline;
+    font-size: 1.7em;
+}
+
+.inp{
+    padding:10px;
+    width: 80%;
+}
+
+.formDiv{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.logBttn{
+    padding: 10px 50px 10px 50px;
+    font-weight: bold;
+    font-size: 1.3em;
+
+}
+
+.logBttn:hover{
+    background-color: rgb(149, 226, 33);
+    color: rgb(240, 232, 232);
+    box-shadow: 2px 4px black;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.reg{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size:x-large;
+}
+#regP{
+    font-size: medium;
+}
+#regB{
+    margin-top: 20px;
+}
+
+
+.logReq{
+    text-align: center;
+}
+.loginRequired_M{
+    margin-top: 80px;
+}
+#newArtF{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+#newArt{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.newArtL{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#mainContent{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+    .singleArticle{
+    border: 2px solid black;
+    text-align: justify;
+    width: 25vw;
+    height: 60vh;
+    margin-top: 45px;
+    overflow: auto;
+    padding: 15px;
+    min-height:300px;
+}
+
+
+
+.successMessg{
+color: red;
+font-size: 2em;
+}
+
+.headlineArt{
+text-decoration: underline;
+text-align: center;
+}
+
+.contentArt{
+    font-size: 1.1em;
+}
+
+footer{
+    width: 100vw;
+    height: 12vh;
+    background-color: black;
+    margin-bottom: 0px;
+    margin-left:0;
+    margin-right:0;
+    margin-top: 100px;
+    color: white;
+    position: absolute;
+
+}
+
+body{
+    margin:0;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.timestampArt{
+    font-size: 0.8em;
+    bottom:0;
+
+}
+
+#one_Article {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+
+}
+
+#article_Content{
+    width: 30vw;
+    min-width: 200px;
+}
+
+#article_headline{
+    text-align: center;
+}
+
+.edit{
+    padding: 15px;
+    width: 200px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#edit_Article{
+    display:none;
+}
+
+#editForm{
+    display: flex;
+    flex-direction: column;
+}
+#artBttns{
+    display: flex;
+    flex-direction: row;
+}
+
+#edit:hover{
+    background-color: green;
+}
+
+#del:hover{
+    background-color: red;
+}
+
+.profile{
+    
+    width:100vw;
+    margin-top: 15px;
+}
+
+#userTimes{
+    font-size: 12px;
+    margin: 50px;
+}
+
+#yourArticles{
+    margin-top:80px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.profile_Article{
+    width: 19vw;
+    min-width: 300px;
+    height: 50vh;
+    border:1px solid lightgrey;
+    margin: 20px;
+    overflow: scroll;
+    padding: 10px;
+}
+#editArt_Profile{
+    padding:10px;
+    width: 10vw;
+    height: 5vh;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#unedited_Profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Edit_Profile{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#Edit_Profile_Form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#ProfBio{
+    width: 30vw;
+}

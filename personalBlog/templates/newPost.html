@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block headline %}WELCOME TO THE FOO-BLOG-PAGE!{% endblock %}
+{% block content %}
+        <div class="loginRequired_M">
+        {% if not user.is_authenticated %}
+            <h1 class="logReq">You have to be logged in, to write your own articles!</h1>
+            <h2 class="logReq"><a href="{% url 'login_view' %}">Login?</a> Need to <a href="{% url 'register_view' %}">Register?</a></h2>
+        </div>
+
+        {% else %}
+
+            <div id="newArt">
+                {% if messages %}
+                    {% for message in messages %}
+                        <h2 class="successMessg">{{message}}</h2>
+                    {% endfor %}
+            {% endif %}
+                <form id="newArtF" method ="POST" action="{% url 'new_Post' %}">
+                    {% csrf_token %}
+                    <label class="newArtL">Topic</label>
+                    {{form.headline}}
+                    <label class="newArtL">Content</label>
+                    {{form.body}}
+                    <input type="submit" class="logBttn">
+               </form>
+            </div>
+        {% endif %}
+
+{% endblock %}

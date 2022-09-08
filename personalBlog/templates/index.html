@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% load static %}
+
+    <title>{% block title %}Welcome! {% endblock %}</title>
+
+    {%block headline %}{{headline}}{%endblock%}
+    {% block content %}
+    <!-- MESSAGES from redirects -->
+    <div id ="mainContent">
+        {% if message %}
+            <h2>{{message}}</h2>
+        {% endif %}
+    <!-- -------Articles---------------------------------------------- -->
+
+    {% for article in articles %}
+        <div class="singleArticle">
+            <h1 class ="headlineArt"><a href="{% url 'one_Article' article.id %}">{{article.headline}}</a></h1>
+            <p class="contentArt">{{article.content}}</p>
+            <p>Written by <a href="">@{{article.author}}</a></p>
+            <p class="timestampArt">Posted: {{article.timestampCreated}}</p>
+        </div>
+    {% endfor %}
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}@{{profile.username}} {% endblock %}
+{% block headline %}Personal Profile{% endblock %}
+{%load static %}
+
+
+{% block content %}
+    <div class = "profile">
+        <div id ="unedited_Profile">
+            <h1>Username: @{{profile.username}}</h1>
+            <h2>Name: {{profile.profileName}}</h2>
+            <h2>Bio:</h2> <p id="ProfBio"> {{profile.bio}}</p>
+            <p id="userTimes">User since: {{profile.created}}</p>
+            <button id="editArt_Profile">Edit!</button>
+
+            <h1>@{{profile.username}}'s Articles</h1>
+        </div>
+
+        <div id="Edit_Profile">
+            <form id="Edit_Profile_Form" action="{% url 'profile' profile.id %}" method="POST">
+                {% csrf_token %}
+                <h1>Username: @{{profile.username}}</h1>
+                <textarea rows="2" cols="40" name="new_Name">{{profile.profileName}}</textarea>
+                <h2>Bio</h2>
+                <textarea rows="30" cols="40" name ="new_Bio">{{profile.bio}}</textarea>
+                <input type="submit" class="edit">
+            </form>
+        </div>
+
+
+
+    <div id="yourArticles">
+        {% for post in posts %}
+        <div class="profile_Article">
+            <h3>{{post.headline}}</h3>
+            <p>{{post.content}}</p>
+            <br>
+            <p>{{post.timestampCreated}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
